@@ -8,51 +8,50 @@
     <style>
         body { margin: 0; background-color: #000; color: #fff; font-family: sans-serif; }
         nav { display: flex; justify-content: space-between; align-items: center; padding: 25px; }
-        .menu-btn { font-size: 24px; cursor: pointer; }
-        .hero { padding: 60px 20px; text-align: center; }
-        h1 { font-size: 36px; margin-bottom: 20px; }
-        .btn { background: #fff; color: #000; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block; }
-        
-        /* Galerie */
-        .gallery { padding: 40px 20px; text-align: center; }
-        .gallery-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-        .gallery-img { width: 280px; border-radius: 20px; border: 1px solid #333; }
+        .hero { padding: 40px 20px; text-align: center; }
+        .btn { background: #fff; color: #000; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; }
 
-        /* Menu Overlay */
-        .overlay { height: 0; width: 100%; position: fixed; top: 0; left: 0; background: #000; overflow-y: hidden; transition: 0.4s; z-index: 10; }
-        .overlay-content { position: relative; top: 20%; text-align: center; width: 100%; }
-        .overlay a { padding: 20px; text-decoration: none; font-size: 24px; color: #fff; display: block; }
-        .closebtn { position: absolute; top: 20px; right: 30px; font-size: 40px; }
+        /* Galerie style Play Store */
+        .gallery-title { padding: 20px 20px 0; font-size: 1.2em; font-weight: bold; }
+        .gallery-container { display: flex; overflow-x: auto; padding: 20px; gap: 15px; scroll-snap-type: x mandatory; }
+        .gallery-img { height: 350px; border-radius: 15px; scroll-snap-align: start; border: 1px solid #333; }
+
+        /* Menu Ordonné */
+        .overlay { height: 0; width: 100%; position: fixed; top: 0; left: 0; background: #000; z-index: 10; transition: 0.3s; overflow-y: hidden; }
+        .menu-list { display: flex; flex-direction: column; padding: 80px 30px; gap: 20px; }
+        .menu-list a { color: #fff; text-decoration: none; font-size: 20px; padding: 10px 0; border-bottom: 1px solid #222; }
+        .closebtn { position: absolute; top: 20px; right: 30px; font-size: 40px; cursor: pointer; }
     </style>
 </head>
 <body>
 
     <nav>
         <div style="font-weight:bold; font-size: 22px;">MGDJ TECH</div>
-        <div class="menu-btn" onclick="document.getElementById('myNav').style.height='100%'"><i class="fas fa-bars"></i></div>
+        <div onclick="document.getElementById('myNav').style.height='100%'"><i class="fas fa-bars fa-lg"></i></div>
     </nav>
 
     <div id="myNav" class="overlay">
-        <a href="javascript:void(0)" class="closebtn" onclick="document.getElementById('myNav').style.height='0'">&times;</a>
-        <div class="overlay-content">
-            <a href="https://whatsapp.com/channel/0029Vb8LE1PHgZWmVpMVqg3c">Communauté</a>
-            <a href="tel:+243971726328">Contacter le développeur</a>
-            <a href="#">Payements</a>
-            <a href="#">Politique et confidentielle</a>
+        <div class="closebtn" onclick="document.getElementById('myNav').style.height='0'">&times;</div>
+        <div class="menu-list">
+            <h3 style="color: #888;">MENU</h3>
+            <a href="https://whatsapp.com/channel/0029Vb8LE1PHgZWmVpMVqg3c"><i class="fas fa-users"></i> Communauté</a>
+            <a href="tel:+243971726328"><i class="fas fa-headset"></i> Contacter le développeur</a>
+            <a href="#"><i class="fas fa-credit-card"></i> Payements</a>
+            <a href="#"><i class="fas fa-shield-alt"></i> Politique de confidentialité</a>
         </div>
     </div>
 
     <section class="hero">
-        <h1>La solution VPN pour vos connexions sécurisées</h1>
-        <a href="https://mgdjtech.netlify.app" class="btn">Télécharger MGDJ VPN</a>
+        <h1>MGDJ VPN</h1>
+        <p>La solution ultime pour vos connexions sécurisées.</p>
+        <a href="https://mgdjtech.netlify.app" class="btn">Télécharger</a>
     </section>
 
-    <section class="gallery">
-        <div class="gallery-container">
-            <img src="capture1.png" alt="App 1" class="gallery-img">
-            <img src="capture2.png" alt="App 2" class="gallery-img">
-            <img src="capture3.png" alt="App 3" class="gallery-img">
-        </div>
+    <div class="gallery-title">Captures d'écran</div>
+    <section class="gallery-container">
+        <img src="capture1.png" alt="Interface 1" class="gallery-img">
+        <img src="capture2.png" alt="Interface 2" class="gallery-img">
+        <img src="capture3.png" alt="Interface 3" class="gallery-img">
     </section>
 
 </body>
